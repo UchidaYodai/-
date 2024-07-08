@@ -1,0 +1,114 @@
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Deployment.Application;
+using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
+{
+    public partial class List : Form
+    {
+        private String empID;
+        private String empName;
+        private int selectedRowIndex = -1;
+
+        public List()
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// ロードしたとき
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", dataGridView1);
+        }
+
+        /// <summary>
+        /// データグリッドビューのクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // ヘッダー行がクリックされた場合は何もしない。eはクリックしたセルの情報
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+            // クリックされた行のデータを取得する
+            DataGridViewRow clickedRow = dataGridView1.Rows[e.RowIndex];
+
+            // 必要なデータを取り出す（例として列名を使用）
+            empID = clickedRow.Cells["EMP_ID"].Value.ToString(); // EmployeeID列の値
+            empName = clickedRow.Cells["EMP_NAME"].Value.ToString() ;
+
+            // 選択された行のインデックスを保存する
+            selectedRowIndex = e.RowIndex;
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(empID))
+            {
+                
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+
+                // UCの変数に格納
+
+                UserClass UC = new UserClass();
+                UC.ID = selectedRow.Cells["EMP_ID"].Value.ToString();
+                UC.UserName = selectedRow.Cells["EMP_NAME"].Value.ToString();
+                UC.Phonetic = selectedRow.Cells["EMP_PHONETIC"].Value.ToString();
+                UC.Gender = CommonClass.BackGender(selectedRow.Cells["EMP_GENDER"].Value.ToString());
+                UC.Year = CommonClass.ExtractDateParts(selectedRow.Cells["EMP_BIRTH"].Value.ToString(), 1);
+                UC.Month = CommonClass.ExtractDateParts(selectedRow.Cells["EMP_BIRTH"].Value.ToString(), 2);
+                UC.Day = CommonClass.ExtractDateParts(selectedRow.Cells["EMP_BIRTH"].Value.ToString(), 3);
+                UC.Phone = selectedRow.Cells["EMP_PHONE"].Value.ToString();
+                UC.Email = selectedRow.Cells["EMP_EMAIL"].Value.ToString();
+                UC.Dep = CommonClass.BackDep(selectedRow.Cells["EMP_DEP"].Value.ToString());
+                UC.Type = selectedRow.Cells["EMP_TYPE"].Value.ToString();
+                
+                //更新画面にUpdateをもって移動
+                Title frm = new Title(UC);
+                frm.sm = SaveMode.Update;
+                frm.ShowDialog();
+                OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", dataGridView1);
+            }
+            else
+            {
+                MessageBox.Show("変更したい行をクリックしてください。", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        /// <summary>
+        /// DB削除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            OracleCommonClass.DeleteEmployee(empID, empName);
+        }
+
+        /// <summary>
+        /// 登録フォームに移動
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Regist_Click(object sender, EventArgs e)
+        {
+            Title frm = new Title(null);
+            frm.sm = SaveMode.New;
+            frm.ShowDialog();
+            OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", dataGridView1);
+        }
+    }
+}
+
