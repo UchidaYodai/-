@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void Form2_Load(object sender, EventArgs e)
         {
-            OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", dataGridView1);
+            OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", EmployeeList);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
             }
 
             // クリックされた行のデータを取得する
-            DataGridViewRow clickedRow = dataGridView1.Rows[e.RowIndex];
+            DataGridViewRow clickedRow = EmployeeList.Rows[e.RowIndex];
 
             // 必要なデータを取り出す（例として列名を使用）
             empID = clickedRow.Cells["EMP_ID"].Value.ToString(); // EmployeeID列の値
@@ -58,28 +58,37 @@ namespace WindowsFormsApp1
             if (!string.IsNullOrEmpty(empID))
             {
                 
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedRowIndex];
+                DataGridViewRow selectedRow = EmployeeList.Rows[selectedRowIndex];
 
                 // UCの変数に格納
 
                 UserClass UC = new UserClass();
-                UC.ID = selectedRow.Cells["EMP_ID"].Value.ToString();
-                UC.UserName = selectedRow.Cells["EMP_NAME"].Value.ToString();
-                UC.Phonetic = selectedRow.Cells["EMP_PHONETIC"].Value.ToString();
-                UC.Gender = CommonClass.BackGender(selectedRow.Cells["EMP_GENDER"].Value.ToString());
-                UC.Year = CommonClass.ExtractDateParts(selectedRow.Cells["EMP_BIRTH"].Value.ToString(), 1);
-                UC.Month = CommonClass.ExtractDateParts(selectedRow.Cells["EMP_BIRTH"].Value.ToString(), 2);
-                UC.Day = CommonClass.ExtractDateParts(selectedRow.Cells["EMP_BIRTH"].Value.ToString(), 3);
-                UC.Phone = selectedRow.Cells["EMP_PHONE"].Value.ToString();
-                UC.Email = selectedRow.Cells["EMP_EMAIL"].Value.ToString();
-                UC.Dep = CommonClass.BackDep(selectedRow.Cells["EMP_DEP"].Value.ToString());
-                UC.Type = selectedRow.Cells["EMP_TYPE"].Value.ToString();
-                
-                //更新画面にUpdateをもって移動
-                Title frm = new Title(UC);
-                frm.sm = SaveMode.Update;
-                frm.ShowDialog();
-                OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", dataGridView1);
+                //IDに入力されているときのみ実行↓
+                if (selectedRow.Cells["EMP_ID"] != null)
+                {
+                    UC.ID = selectedRow.Cells["EMP_ID"].Value.ToString();
+                    UC.UserName = selectedRow.Cells["EMP_NAME"].Value.ToString();
+                    UC.Phonetic = selectedRow.Cells["EMP_PHONETIC"].Value.ToString();
+                    UC.Gender = CommonClass.BackGender(selectedRow.Cells["EMP_GENDER"].Value.ToString());
+                    UC.Year = CommonClass.ExtractDateParts(selectedRow.Cells["EMP_BIRTH"].Value.ToString(), 1);
+                    UC.Month = CommonClass.ExtractDateParts(selectedRow.Cells["EMP_BIRTH"].Value.ToString(), 2);
+                    UC.Day = CommonClass.ExtractDateParts(selectedRow.Cells["EMP_BIRTH"].Value.ToString(), 3);
+                    UC.Phone = selectedRow.Cells["EMP_PHONE"].Value.ToString();
+                    UC.Email = selectedRow.Cells["EMP_EMAIL"].Value.ToString();
+                    UC.Dep = CommonClass.BackDep(selectedRow.Cells["EMP_DEP"].Value.ToString());
+                    UC.Type = selectedRow.Cells["EMP_TYPE"].Value.ToString();
+
+
+                    //更新画面にUpdateをもって移動
+                    Title frm = new Title(UC);
+                    frm.sm = SaveMode.Update;
+                    frm.ShowDialog();
+                    OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", EmployeeList);
+                }
+                else
+                {
+                    MessageBox.Show("データがありません", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else
             {
@@ -95,6 +104,7 @@ namespace WindowsFormsApp1
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             OracleCommonClass.DeleteEmployee(empID, empName);
+            OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", EmployeeList);
         }
 
         /// <summary>
@@ -107,7 +117,7 @@ namespace WindowsFormsApp1
             Title frm = new Title(null);
             frm.sm = SaveMode.New;
             frm.ShowDialog();
-            OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", dataGridView1);
+            OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", EmployeeList);
         }
     }
 }

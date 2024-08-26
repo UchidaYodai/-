@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 
         public static String CheckInputText(String ID, String name, String phonetic, String gender, String birth, String phone, String Email, String dep, String status)
         {
-            String message = "社員ID　" + ID + "\n" +
+            String message = "従業員ID　" + ID + "\n" +
                       "氏名　" + name + "\n" +
                       "フリガナ　" + phonetic + "\n" +
                       "性別　" + gender + "\n" +
@@ -167,10 +167,11 @@ namespace WindowsFormsApp1
         /// <param name="textBox"></param>
         public static void ValidateEmailFormat(TextBox textBox)
         {
-            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            string emailPattern = @"^$|^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
             if (!System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, emailPattern))
             {
+                MessageBox.Show("メールアドレスが正しくありません。");
                 textBox.Text = ""; // 無効なメールアドレスの場合はクリア
             }
         }
@@ -183,14 +184,16 @@ namespace WindowsFormsApp1
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, @"^\p{IsKatakana}*$") == false)
             {
+                MessageBox.Show("カタカナ以外入力できません");
                 textBox.Text = ""; // 全角カタカナ以外が入っていたらクリア
             }
         }
 
         public static void ValidateFullname(TextBox textBox)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, @"[\p{IsCJKUnifiedIdeographs}\p{IsHiragana}\p{IsKatakana}]"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, @"^[\p{IsCJKUnifiedIdeographs}\p{IsHiragana}\p{IsKatakana}]*$"))
             {
+                MessageBox.Show("名前に使用できない文字が使われています。");
                 // テキストボックスをクリア
                 textBox.Text = "";
             }
@@ -214,5 +217,32 @@ namespace WindowsFormsApp1
             return (year);
         }
 
+        public static String IDItem = "ID";
+        public static String FullNameItem = "氏名";
+        public static String PhoneticItem = "フリガナ";
+        public static String GenderItem = "性別";
+        public static String YearItem = "生年";
+        public static String MonthItem = "生月";
+        public static String DayItem = "生日";
+        public static String PhoneItem = "電話番号";
+        public static String EmailItem = "メールアドレス";
+        public static String DepItem = "所属部署";
+        public static String StatusItem = "雇用形態";
+
+        public static bool hasError = false;
+
+        public static void ErrorMessage(String BoxItem, String Item)
+        {
+            if (hasError)
+            {
+                return; // 既にエラーが発生している場合は、以降のチェックをスキップ
+            }
+
+            if (string.IsNullOrWhiteSpace(BoxItem))
+            {
+                MessageBox.Show(Item + "を入力してください。", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                hasError = true; // エラーが発生したことを記録
+            }
+        }
     }
 }

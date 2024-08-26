@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1
 {
     public partial class Title : Form
     {
         public SaveMode sm;
-        public UserClass UC;
+        private UserClass UC;
 
         public Title(UserClass user)
         {
@@ -21,8 +22,9 @@ namespace WindowsFormsApp1
             {
                 //テキストの変更
                 Text = "編集画面";
-                label1.Text = "編集フォーム";
+                TitleLabel.Text = "編集フォーム";
                 Confirm_button.Text = "編集";
+                ID_textBox.ReadOnly = true;
 
                 //データ表示
                 ID_textBox.Text = UC.ID.ToString();
@@ -36,7 +38,6 @@ namespace WindowsFormsApp1
                 Email_textBox.Text = UC.Email.ToString();
                 Deployment_comboBox.SelectedItem = UC.Dep.ToString();
                 Emp_status_comboBox.SelectedItem = UC.Type;
-
 
             }
         }
@@ -61,21 +62,41 @@ namespace WindowsFormsApp1
             string Birth_Value = Year_textBox.Text + Month_comboBox.Text + Day_comboBox.Text;
             string Deployment_Value = CommonClass.ChangeDeployment(Deployment_textValue);
 
-            if (string.IsNullOrWhiteSpace(ID_textValue) ||
-                string.IsNullOrWhiteSpace(Fullname_textValue) ||
-                string.IsNullOrWhiteSpace(Phonetic_textValue) ||
-                string.IsNullOrWhiteSpace(Gender_textValue) ||
-                string.IsNullOrWhiteSpace(Year_textValue) ||
-                string.IsNullOrWhiteSpace(Month_textValue) ||
-                string.IsNullOrWhiteSpace(Day_textValue) ||
-                string.IsNullOrWhiteSpace(Phone_textValue) ||
-                string.IsNullOrWhiteSpace(Email_textValue) ||
-                string.IsNullOrWhiteSpace(Deployment_textValue) ||
-                string.IsNullOrWhiteSpace(Emp_status_textValue))
-            {
-                MessageBox.Show("全ての項目を入力してください。", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            CommonClass.hasError = false;
+            CommonClass.ErrorMessage(ID_textValue, CommonClass.IDItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Fullname_textValue, CommonClass.FullNameItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Phonetic_textValue, CommonClass.PhoneticItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Gender_textValue, CommonClass.GenderItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Year_textValue, CommonClass.YearItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Month_textValue, CommonClass.MonthItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Day_textValue, CommonClass.DayItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Phone_textValue, CommonClass.PhoneItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Email_textValue, CommonClass.EmailItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Deployment_textValue, CommonClass.DepItem);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ErrorMessage(Emp_status_textValue, CommonClass.StatusItem);
+            if (CommonClass.hasError) return;
+
+
 
             //入力内容確認メッセージ
             string message = CommonClass.CheckInputText(ID_textValue, Fullname_textValue, Phonetic_textValue, Gender_textValue, DateOfBirth, Phone_textValue, Email_textValue, Deployment_textValue, Emp_status_textValue);
@@ -89,12 +110,13 @@ namespace WindowsFormsApp1
                 {
                     sql = OracleCommonClass.UpdateSql(ID_textValue, Fullname_textValue, Phonetic_textValue, Gender_Value, Year_textValue, Month_textValue, Day_textValue, Phone_textValue, Email_textValue, Deployment_Value, Emp_status_textValue);
                     OracleCommonClass.ExecuteSql(sql, OracleCommonClass.DB_ConnectPass);
-                    
+                    this.Close();
                 }
                 else if(sm == SaveMode.New)
                 {
                     sql = OracleCommonClass.InsertSql(ID_textValue, Fullname_textValue, Phonetic_textValue, Gender_Value, Birth_Value, Phone_textValue, Email_textValue, Deployment_Value, Emp_status_textValue);
                     OracleCommonClass.ExecuteSql(sql, OracleCommonClass.DB_ConnectPass);
+                    this.Close();
                 }
             }
         }
@@ -107,7 +129,25 @@ namespace WindowsFormsApp1
         private void ID_textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             CommonClass.AllowOnlyNumbers(e);
+
         }
+
+        /// <summary>
+        /// IDゼロ埋め
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ID_textBox_Leave(object sender, EventArgs e)
+        {
+            string input = ID_textBox.Text;
+
+            // 入力が5文字未満の場合、0で埋める
+            if (input.Length >= 1 && input.Length < 5)
+            {
+                ID_textBox.Text = input.PadLeft(5, '0');
+            }
+        }
+
 
         /// <summary>
         /// 年の入力制限
@@ -126,7 +166,7 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void Phone_textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            CommonClass.AllowNumbersAndHyphen(e);
+            CommonClass.AllowOnlyNumbers(e);
         }
 
         /// <summary>
@@ -157,6 +197,19 @@ namespace WindowsFormsApp1
         private void Fullname_textBox_Leave(object sender, EventArgs e)
         {
             CommonClass.ValidateFullname(Fullname_textBox);
+        }
+
+        /// <summary>
+        /// 年4桁固定
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Year_textBox_Leave(object sender, EventArgs e)
+        {
+            if(Year_textBox.Text.Length < 4)
+            {
+                Year_textBox.Text = "";
+            }
         }
     }
 }

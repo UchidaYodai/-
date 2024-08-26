@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Deployment.Application;
+using System.Runtime.CompilerServices;
 
 namespace WindowsFormsApp1
 {
@@ -37,19 +38,20 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-            catch (Exception ex)
+            catch (OracleException ex)
             {
                 StringBuilder errorMessage = new StringBuilder();
-                errorMessage.AppendLine("エラーメッセージ: " + ex.Message);
-                errorMessage.AppendLine("スタックトレース: " + ex.StackTrace);
+                if (ex.Number == 1)
+                {
+                    MessageBox.Show("このIDは既に使われています。", "登録エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
 
                 if (ex.InnerException != null)
                 {
                     errorMessage.AppendLine("内部例外メッセージ: " + ex.InnerException.Message);
                     errorMessage.AppendLine("内部例外スタックトレース: " + ex.InnerException.StackTrace);
                 }
-
-                MessageBox.Show(errorMessage.ToString(), "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -71,7 +73,7 @@ namespace WindowsFormsApp1
         {
             String sql;
             sql = "INSERT INTO EMPLOYEES (EMP_ID, EMP_NAME, EMP_PHONETIC, EMP_GENDER, EMP_BIRTH, EMP_PHONE, EMP_EMAIL, EMP_DEP, EMP_TYPE) VALUES (";
-            sql += "'" + ID + "', ";  //社員ID
+            sql += "'" + ID + "', ";  //従業員ID
             sql += "'" + name + "', ";  //名前（漢字） 
             sql += "'" + phonetic + "', ";  // フリガナ
             sql += "'" + gender + "', ";  // 性別
@@ -131,7 +133,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-                MessageBox.Show("データの取得中にエラーが発生しました: " + ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("従業員一覧を表示できませんでした。: " + ex.Message, "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -1,0 +1,93 @@
+--------------------------------------------------------------------------------
+-- MSS.EMPLOYEES のレイアウト変更
+--   2024/07/08 (月) uchid
+--------------------------------------------------------------------------------
+
+
+-- 新テーブルの作成
+create table MSS."$$EMPLOYEES" (
+  EMP_ID VARCHAR2(5) not null
+  , EMP_NAME VARCHAR2(20)
+  , EMP_GENDER VARCHAR2(1)
+  , EMP_BIRTH DATE
+  , EMP_PHONE VARCHAR2(20)
+  , EMP_EMAIL VARCHAR2(50)
+  , EMP_DEP VARCHAR2(20)
+  , EMP_HIRE_DATE DATE
+  , EMP_TYPE VARCHAR2(20)
+  , EMP_PHONETIC VARCHAR2(100)
+)
+  pctfree 10
+  initrans 1
+  maxtrans 1
+  logging
+  storage (
+    initial 65536
+    next 1048576
+    minextents 1
+    maxextents 2147483645
+  )
+  tablespace "USERS"
+/
+
+
+-- 新テーブルへデータ投入
+insert /*+ APPEND */ into MSS."$$EMPLOYEES"(EMP_ID, EMP_NAME, EMP_GENDER, EMP_BIRTH, EMP_PHONE, EMP_EMAIL, EMP_DEP, EMP_HIRE_DATE, EMP_TYPE, EMP_PHONETIC)
+  select org.EMP_ID, org.EMP_NAME, org.EMP_GENDER, org.EMP_BIRTH, org.EMP_PHONE, org.EMP_EMAIL, org.EMP_DEP, org.EMP_HIRE_DATE, org.EMP_TYPE, org.EMP_PHONETIC from MSS.EMPLOYEES org
+/
+
+
+-- 元テーブルの削除
+drop table MSS.EMPLOYEES cascade constraints
+/
+
+
+-- 新テーブルをリネームして元テーブル名に変更
+alter table MSS."$$EMPLOYEES" rename to EMPLOYEES
+/
+
+
+-- インデックスとユニーク制約の作成
+create unique index MSS.SYS_C006988 on MSS.EMPLOYEES(EMP_ID)
+/
+
+
+-- 主キーの作成
+alter table MSS.EMPLOYEES  add constraint SYS_C006988 primary key (EMP_ID)
+/
+
+
+-- コメントの作成
+comment on table MSS.EMPLOYEES is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_ID is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_NAME is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_GENDER is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_BIRTH is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_PHONE is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_EMAIL is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_DEP is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_HIRE_DATE is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_TYPE is ''
+/
+
+comment on column MSS.EMPLOYEES.EMP_PHONETIC is ''
+/
+
