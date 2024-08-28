@@ -61,7 +61,7 @@
             // TypeLabel
             // 
             this.TypeLabel.AutoSize = true;
-            this.TypeLabel.Location = new System.Drawing.Point(118, 958);
+            this.TypeLabel.Location = new System.Drawing.Point(126, 895);
             this.TypeLabel.Name = "TypeLabel";
             this.TypeLabel.Size = new System.Drawing.Size(106, 24);
             this.TypeLabel.TabIndex = 56;
@@ -70,17 +70,17 @@
             // Phonetic_textBox
             // 
             this.Phonetic_textBox.ImeMode = System.Windows.Forms.ImeMode.Katakana;
-            this.Phonetic_textBox.Location = new System.Drawing.Point(111, 422);
+            this.Phonetic_textBox.Location = new System.Drawing.Point(118, 359);
             this.Phonetic_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Phonetic_textBox.Name = "Phonetic_textBox";
             this.Phonetic_textBox.Size = new System.Drawing.Size(569, 31);
-            this.Phonetic_textBox.TabIndex = 55;
+            this.Phonetic_textBox.TabIndex = 2;
             this.Phonetic_textBox.Leave += new System.EventHandler(this.Phonetic_textBox_Leave);
             // 
             // FuriganaLabel
             // 
             this.FuriganaLabel.AutoSize = true;
-            this.FuriganaLabel.Location = new System.Drawing.Point(108, 395);
+            this.FuriganaLabel.Location = new System.Drawing.Point(116, 332);
             this.FuriganaLabel.Name = "FuriganaLabel";
             this.FuriganaLabel.Size = new System.Drawing.Size(78, 24);
             this.FuriganaLabel.TabIndex = 54;
@@ -94,16 +94,16 @@
             "岩手",
             "宮城",
             "東京"});
-            this.Deployment_comboBox.Location = new System.Drawing.Point(114, 875);
+            this.Deployment_comboBox.Location = new System.Drawing.Point(122, 812);
             this.Deployment_comboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Deployment_comboBox.Name = "Deployment_comboBox";
             this.Deployment_comboBox.Size = new System.Drawing.Size(242, 32);
-            this.Deployment_comboBox.TabIndex = 53;
+            this.Deployment_comboBox.TabIndex = 9;
             // 
             // DepLabel
             // 
             this.DepLabel.AutoSize = true;
-            this.DepLabel.Location = new System.Drawing.Point(113, 848);
+            this.DepLabel.Location = new System.Drawing.Point(121, 785);
             this.DepLabel.Name = "DepLabel";
             this.DepLabel.Size = new System.Drawing.Size(106, 24);
             this.DepLabel.TabIndex = 52;
@@ -119,21 +119,21 @@
             // 
             // Email_textBox
             // 
-            this.Email_textBox.Location = new System.Drawing.Point(112, 771);
+            this.Email_textBox.Location = new System.Drawing.Point(120, 708);
             this.Email_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Email_textBox.Name = "Email_textBox";
             this.Email_textBox.Size = new System.Drawing.Size(568, 31);
-            this.Email_textBox.TabIndex = 50;
+            this.Email_textBox.TabIndex = 8;
             this.Email_textBox.Leave += new System.EventHandler(this.Email_textBox_Leave);
             // 
             // Phone_textBox
             // 
-            this.Phone_textBox.Location = new System.Drawing.Point(114, 686);
+            this.Phone_textBox.Location = new System.Drawing.Point(122, 623);
             this.Phone_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Phone_textBox.MaxLength = 11;
             this.Phone_textBox.Name = "Phone_textBox";
             this.Phone_textBox.Size = new System.Drawing.Size(320, 31);
-            this.Phone_textBox.TabIndex = 49;
+            this.Phone_textBox.TabIndex = 7;
             this.Phone_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Phone_textBox_KeyPress);
             // 
             // contextMenuStrip1
@@ -150,16 +150,16 @@
             "正社員",
             "パート",
             "アルバイト"});
-            this.Emp_status_comboBox.Location = new System.Drawing.Point(114, 984);
+            this.Emp_status_comboBox.Location = new System.Drawing.Point(122, 921);
             this.Emp_status_comboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Emp_status_comboBox.Name = "Emp_status_comboBox";
             this.Emp_status_comboBox.Size = new System.Drawing.Size(242, 32);
-            this.Emp_status_comboBox.TabIndex = 57;
+            this.Emp_status_comboBox.TabIndex = 10;
             // 
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(112, 745);
+            this.EmailLabel.Location = new System.Drawing.Point(120, 682);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(138, 24);
             this.EmailLabel.TabIndex = 48;
@@ -168,7 +168,7 @@
             // PhoneLabel
             // 
             this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Location = new System.Drawing.Point(114, 660);
+            this.PhoneLabel.Location = new System.Drawing.Point(122, 597);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(242, 24);
             this.PhoneLabel.TabIndex = 47;
@@ -177,7 +177,7 @@
             // DayLabel
             // 
             this.DayLabel.AutoSize = true;
-            this.DayLabel.Location = new System.Drawing.Point(588, 601);
+            this.DayLabel.Location = new System.Drawing.Point(596, 538);
             this.DayLabel.Name = "DayLabel";
             this.DayLabel.Size = new System.Drawing.Size(34, 24);
             this.DayLabel.TabIndex = 46;
@@ -185,19 +185,19 @@
             // 
             // Year_textBox
             // 
-            this.Year_textBox.Location = new System.Drawing.Point(112, 599);
+            this.Year_textBox.Location = new System.Drawing.Point(120, 536);
             this.Year_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Year_textBox.MaxLength = 4;
             this.Year_textBox.Name = "Year_textBox";
             this.Year_textBox.Size = new System.Drawing.Size(131, 31);
-            this.Year_textBox.TabIndex = 45;
+            this.Year_textBox.TabIndex = 4;
             this.Year_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Year_textBox_KeyPress);
             this.Year_textBox.Leave += new System.EventHandler(this.Year_textBox_Leave);
             // 
             // MonthLabel
             // 
             this.MonthLabel.AutoSize = true;
-            this.MonthLabel.Location = new System.Drawing.Point(413, 600);
+            this.MonthLabel.Location = new System.Drawing.Point(421, 537);
             this.MonthLabel.Name = "MonthLabel";
             this.MonthLabel.Size = new System.Drawing.Size(34, 24);
             this.MonthLabel.TabIndex = 44;
@@ -206,7 +206,7 @@
             // YearLabel
             // 
             this.YearLabel.AutoSize = true;
-            this.YearLabel.Location = new System.Drawing.Point(248, 601);
+            this.YearLabel.Location = new System.Drawing.Point(256, 538);
             this.YearLabel.Name = "YearLabel";
             this.YearLabel.Size = new System.Drawing.Size(34, 24);
             this.YearLabel.TabIndex = 43;
@@ -248,11 +248,11 @@
             "29",
             "30",
             "31"});
-            this.Day_comboBox.Location = new System.Drawing.Point(473, 598);
+            this.Day_comboBox.Location = new System.Drawing.Point(481, 535);
             this.Day_comboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Day_comboBox.Name = "Day_comboBox";
             this.Day_comboBox.Size = new System.Drawing.Size(110, 32);
-            this.Day_comboBox.TabIndex = 42;
+            this.Day_comboBox.TabIndex = 6;
             // 
             // Month_comboBox
             // 
@@ -271,16 +271,16 @@
             "10",
             "11",
             "12"});
-            this.Month_comboBox.Location = new System.Drawing.Point(301, 598);
+            this.Month_comboBox.Location = new System.Drawing.Point(309, 535);
             this.Month_comboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Month_comboBox.Name = "Month_comboBox";
             this.Month_comboBox.Size = new System.Drawing.Size(107, 32);
-            this.Month_comboBox.TabIndex = 41;
+            this.Month_comboBox.TabIndex = 5;
             // 
             // BirthLabel
             // 
             this.BirthLabel.AutoSize = true;
-            this.BirthLabel.Location = new System.Drawing.Point(112, 572);
+            this.BirthLabel.Location = new System.Drawing.Point(120, 509);
             this.BirthLabel.Name = "BirthLabel";
             this.BirthLabel.Size = new System.Drawing.Size(106, 24);
             this.BirthLabel.TabIndex = 40;
@@ -294,16 +294,16 @@
             "男性",
             "女性",
             "その他"});
-            this.Gender_comboBox.Location = new System.Drawing.Point(112, 512);
+            this.Gender_comboBox.Location = new System.Drawing.Point(120, 449);
             this.Gender_comboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Gender_comboBox.Name = "Gender_comboBox";
             this.Gender_comboBox.Size = new System.Drawing.Size(242, 32);
-            this.Gender_comboBox.TabIndex = 39;
+            this.Gender_comboBox.TabIndex = 3;
             // 
             // GenderLabel
             // 
             this.GenderLabel.AutoSize = true;
-            this.GenderLabel.Location = new System.Drawing.Point(112, 486);
+            this.GenderLabel.Location = new System.Drawing.Point(120, 423);
             this.GenderLabel.Name = "GenderLabel";
             this.GenderLabel.Size = new System.Drawing.Size(58, 24);
             this.GenderLabel.TabIndex = 38;
@@ -312,7 +312,7 @@
             // FullnameLabel
             // 
             this.FullnameLabel.AutoSize = true;
-            this.FullnameLabel.Location = new System.Drawing.Point(107, 306);
+            this.FullnameLabel.Location = new System.Drawing.Point(115, 243);
             this.FullnameLabel.Name = "FullnameLabel";
             this.FullnameLabel.Size = new System.Drawing.Size(178, 24);
             this.FullnameLabel.TabIndex = 37;
@@ -321,38 +321,38 @@
             // EmpIDLabel
             // 
             this.EmpIDLabel.AutoSize = true;
-            this.EmpIDLabel.Location = new System.Drawing.Point(107, 198);
+            this.EmpIDLabel.Location = new System.Drawing.Point(115, 135);
             this.EmpIDLabel.Name = "EmpIDLabel";
-            this.EmpIDLabel.Size = new System.Drawing.Size(80, 24);
+            this.EmpIDLabel.Size = new System.Drawing.Size(104, 24);
             this.EmpIDLabel.TabIndex = 36;
-            this.EmpIDLabel.Text = "社員ID";
+            this.EmpIDLabel.Text = "従業員ID";
             // 
             // Fullname_textBox
             // 
-            this.Fullname_textBox.Location = new System.Drawing.Point(107, 332);
+            this.Fullname_textBox.Location = new System.Drawing.Point(115, 269);
             this.Fullname_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Fullname_textBox.Name = "Fullname_textBox";
             this.Fullname_textBox.Size = new System.Drawing.Size(575, 31);
-            this.Fullname_textBox.TabIndex = 35;
+            this.Fullname_textBox.TabIndex = 1;
             this.Fullname_textBox.Leave += new System.EventHandler(this.Fullname_textBox_Leave);
             // 
             // ID_textBox
             // 
             this.ID_textBox.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ID_textBox.Location = new System.Drawing.Point(107, 224);
+            this.ID_textBox.Location = new System.Drawing.Point(115, 161);
             this.ID_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ID_textBox.MaxLength = 5;
             this.ID_textBox.Name = "ID_textBox";
             this.ID_textBox.ShortcutsEnabled = false;
             this.ID_textBox.Size = new System.Drawing.Size(575, 31);
-            this.ID_textBox.TabIndex = 34;
+            this.ID_textBox.TabIndex = 0;
             this.ID_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ID_textBox_KeyPress);
             this.ID_textBox.Leave += new System.EventHandler(this.ID_textBox_Leave);
             // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Location = new System.Drawing.Point(323, 88);
+            this.TitleLabel.Location = new System.Drawing.Point(323, 60);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(130, 24);
             this.TitleLabel.TabIndex = 33;
@@ -360,11 +360,11 @@
             // 
             // Confirm_button
             // 
-            this.Confirm_button.Location = new System.Drawing.Point(677, 916);
+            this.Confirm_button.Location = new System.Drawing.Point(499, 844);
             this.Confirm_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Confirm_button.Name = "Confirm_button";
             this.Confirm_button.Size = new System.Drawing.Size(240, 109);
-            this.Confirm_button.TabIndex = 32;
+            this.Confirm_button.TabIndex = 11;
             this.Confirm_button.Text = "登録";
             this.Confirm_button.UseVisualStyleBackColor = true;
             this.Confirm_button.Click += new System.EventHandler(this.Confirm_button_Click);
@@ -373,7 +373,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 1330);
+            this.ClientSize = new System.Drawing.Size(829, 1096);
             this.Controls.Add(this.TypeLabel);
             this.Controls.Add(this.Phonetic_textBox);
             this.Controls.Add(this.FuriganaLabel);
@@ -400,8 +400,9 @@
             this.Controls.Add(this.ID_textBox);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.Confirm_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Title";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "新規登録画面";
             this.Load += new System.EventHandler(this.Title_Load);
             this.ResumeLayout(false);

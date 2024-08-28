@@ -27,6 +27,15 @@ namespace WindowsFormsApp1
         private void Form2_Load(object sender, EventArgs e)
         {
             OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", EmployeeList);
+            EmployeeList.Columns["EMP_ID"].HeaderText = "従業員ID";
+            EmployeeList.Columns["EMP_NAME"].HeaderText = "氏名";
+            EmployeeList.Columns["EMP_GENDER"].HeaderText = "性別";
+            EmployeeList.Columns["EMP_BIRTH"].HeaderText = "生年月日";
+            EmployeeList.Columns["EMP_PHONE"].HeaderText = "電話番号";
+            EmployeeList.Columns["EMP_EMAIL"].HeaderText = "メールアドレス";
+            EmployeeList.Columns["EMP_DEP"].HeaderText = "所属部署";
+            EmployeeList.Columns["EMP_TYPE"].HeaderText = "雇用形態";
+            EmployeeList.Columns["EMP_PHONETIC"].HeaderText = "フリガナ";
         }
 
         /// <summary>
@@ -118,6 +127,49 @@ namespace WindowsFormsApp1
             frm.sm = SaveMode.New;
             frm.ShowDialog();
             OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", EmployeeList);
+        }
+
+        private void EmployeeList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (EmployeeList.Columns[e.ColumnIndex].Name == "EMP_GENDER")
+            {
+                if (e.Value != null)
+                {
+                    // 値を確認して、表示するテキストを設定します
+                    switch (e.Value.ToString())
+                    {
+                        case "M":
+                            e.Value = "男性";
+                            break;
+                        case "F":
+                            e.Value = "女性";
+                            break;
+                        case "O":
+                            e.Value = "その他";
+                            break;
+                    }
+                }
+            }
+
+            if (EmployeeList.Columns[e.ColumnIndex].Name == "EMP_DEP")
+            {
+                if (e.Value != null)
+                {
+                    // 値を確認して、表示するテキストを設定します
+                    switch (e.Value.ToString())
+                    {
+                        case "I":
+                            e.Value = "岩手";
+                            break;
+                        case "M":
+                            e.Value = "宮城";
+                            break;
+                        case "T":
+                            e.Value = "東京";
+                            break;
+                    }
+                }
+            }
         }
     }
 }

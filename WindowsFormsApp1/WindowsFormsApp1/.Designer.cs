@@ -61,9 +61,10 @@ namespace WindowsFormsApp1
             this.EmployeeList.RowHeadersWidth = 82;
             this.EmployeeList.RowTemplate.Height = 33;
             this.EmployeeList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmployeeList.Size = new System.Drawing.Size(1575, 740);
+            this.EmployeeList.Size = new System.Drawing.Size(2121, 740);
             this.EmployeeList.TabIndex = 0;
             this.EmployeeList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.EmployeeList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.EmployeeList_CellFormatting);
             // 
             // TitleLabel
             // 
@@ -114,7 +115,7 @@ namespace WindowsFormsApp1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1608, 1107);
+            this.ClientSize = new System.Drawing.Size(2154, 1107);
             this.Controls.Add(this.RegistButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.DeleteButton);

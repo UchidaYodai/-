@@ -169,10 +169,15 @@ namespace WindowsFormsApp1
         {
             string emailPattern = @"^$|^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
+            if(hasError)
+            {
+                return;
+            }
+
             if (!System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, emailPattern))
             {
                 MessageBox.Show("メールアドレスが正しくありません。");
-                textBox.Text = ""; // 無効なメールアドレスの場合はクリア
+                hasError = true;
             }
         }
 
@@ -182,20 +187,25 @@ namespace WindowsFormsApp1
         /// <param name="textBox"></param>
         public static void ValidatePhoneticInput(TextBox textBox)
         {
+            if(hasError)
+            {
+                return;
+            }
+
             if (System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, @"^\p{IsKatakana}*$") == false)
             {
                 MessageBox.Show("カタカナ以外入力できません");
-                textBox.Text = ""; // 全角カタカナ以外が入っていたらクリア
+                hasError = true;
             }
         }
+
 
         public static void ValidateFullname(TextBox textBox)
         {
             if (!System.Text.RegularExpressions.Regex.IsMatch(textBox.Text, @"^[\p{IsCJKUnifiedIdeographs}\p{IsHiragana}\p{IsKatakana}]*$"))
             {
                 MessageBox.Show("名前に使用できない文字が使われています。");
-                // テキストボックスをクリア
-                textBox.Text = "";
+                hasError = true;
             }
         }
 
@@ -231,6 +241,11 @@ namespace WindowsFormsApp1
 
         public static bool hasError = false;
 
+        /// <summary>
+        /// 未入力チェック
+        /// </summary>
+        /// <param name="BoxItem"></param>
+        /// <param name="Item"></param>
         public static void ErrorMessage(String BoxItem, String Item)
         {
             if (hasError)

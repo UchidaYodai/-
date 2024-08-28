@@ -161,5 +161,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("削除したい行をクリックしてください。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+
     }
 }

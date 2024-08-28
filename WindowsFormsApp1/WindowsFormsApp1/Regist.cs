@@ -96,6 +96,15 @@ namespace WindowsFormsApp1
             CommonClass.ErrorMessage(Emp_status_textValue, CommonClass.StatusItem);
             if (CommonClass.hasError) return;
 
+            CommonClass.ValidateEmailFormat(Email_textBox);
+            if (CommonClass.hasError) return;
+
+            CommonClass.ValidateFullname(Fullname_textBox);
+            if(CommonClass.hasError) return;
+
+            CommonClass.ValidatePhoneticInput(Phonetic_textBox);
+            if (CommonClass.hasError) return;
+
 
 
             //入力内容確認メッセージ
