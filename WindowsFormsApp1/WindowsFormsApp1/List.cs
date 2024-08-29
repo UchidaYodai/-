@@ -1,6 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Deployment.Application;
 using System.Security.Cryptography.X509Certificates;
@@ -36,6 +37,28 @@ namespace WindowsFormsApp1
             EmployeeList.Columns["EMP_DEP"].HeaderText = "所属部署";
             EmployeeList.Columns["EMP_TYPE"].HeaderText = "雇用形態";
             EmployeeList.Columns["EMP_PHONETIC"].HeaderText = "フリガナ";
+
+            foreach (DataGridViewColumn c in EmployeeList.Columns)
+                c.SortMode = DataGridViewColumnSortMode.Automatic;
+
+            if (EmployeeList.CurrentCell == null)
+                return;
+
+            //並び替える列を決める
+            DataGridViewColumn sortColumn = EmployeeList.CurrentCell.OwningColumn;
+
+            //並び替えの方向（昇順か降順か）を決める
+            ListSortDirection sortDirection = ListSortDirection.Ascending;
+            if (EmployeeList.SortedColumn != null &&
+                EmployeeList.SortedColumn.Equals(sortColumn))
+            {
+                sortDirection =
+                    EmployeeList.SortOrder == SortOrder.Ascending ?
+                    ListSortDirection.Descending : ListSortDirection.Ascending;
+            }
+
+            //並び替えを行う
+            EmployeeList.Sort(sortColumn, sortDirection);
         }
 
         /// <summary>
@@ -56,7 +79,7 @@ namespace WindowsFormsApp1
 
             // 必要なデータを取り出す（例として列名を使用）
             empID = clickedRow.Cells["EMP_ID"].Value.ToString(); // EmployeeID列の値
-            empName = clickedRow.Cells["EMP_NAME"].Value.ToString() ;
+            empName = clickedRow.Cells["EMP_NAME"].Value.ToString();
 
             // 選択された行のインデックスを保存する
             selectedRowIndex = e.RowIndex;
@@ -66,7 +89,7 @@ namespace WindowsFormsApp1
         {
             if (!string.IsNullOrEmpty(empID))
             {
-                
+
                 DataGridViewRow selectedRow = EmployeeList.Rows[selectedRowIndex];
 
                 // UCの変数に格納

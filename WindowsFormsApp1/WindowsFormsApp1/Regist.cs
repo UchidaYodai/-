@@ -64,46 +64,74 @@ namespace WindowsFormsApp1
 
             CommonClass.hasError = false;
             CommonClass.ErrorMessage(ID_textValue, CommonClass.IDItem);
+            ID_textBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Fullname_textValue, CommonClass.FullNameItem);
+            Fullname_textBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Phonetic_textValue, CommonClass.PhoneticItem);
+            Phonetic_textBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Gender_textValue, CommonClass.GenderItem);
+            Gender_comboBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Year_textValue, CommonClass.YearItem);
+            Year_textBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Month_textValue, CommonClass.MonthItem);
+            Month_comboBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Day_textValue, CommonClass.DayItem);
+            Day_comboBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Phone_textValue, CommonClass.PhoneItem);
+            Phone_textBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Email_textValue, CommonClass.EmailItem);
+            Email_textBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Deployment_textValue, CommonClass.DepItem);
+            Deployment_comboBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ErrorMessage(Emp_status_textValue, CommonClass.StatusItem);
+            Emp_status_comboBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ValidateEmailFormat(Email_textBox);
+            Email_textBox.Focus();
             if (CommonClass.hasError) return;
+            
 
             CommonClass.ValidateFullname(Fullname_textBox);
-            if(CommonClass.hasError) return;
+            Fullname_textBox.Focus();
+            if (CommonClass.hasError) return;
+            
 
             CommonClass.ValidatePhoneticInput(Phonetic_textBox);
+            Phonetic_textBox.Focus();
             if (CommonClass.hasError) return;
+            
 
 
 

@@ -256,6 +256,7 @@ namespace WindowsFormsApp1
             if (string.IsNullOrWhiteSpace(BoxItem))
             {
                 MessageBox.Show(Item + "を入力してください。", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
                 hasError = true; // エラーが発生したことを記録
             }
         }

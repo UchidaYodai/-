@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "C:\\practice\\-\\WindowsFormsApp1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\practice\\-\\windowsformsapp1\\windowsformsapp1\\regist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\regist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\practice\\-\\WindowsFormsApp1\\windowsformsapp1\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\practice\\-\\windowsformsapp1\\windowsformsapp1\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\practice\\-\\WindowsFormsApp1\\windowsformsapp1\\commonclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\commonclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\practice\\-\\WindowsFormsApp1\\windowsformsapp1\\.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\practice\\-\\WindowsFormsApp1\\windowsformsapp1\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\list.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -15,16 +27,8 @@
       "RelativeMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\oraclecommonclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\practice\\-\\WindowsFormsApp1\\windowsformsapp1\\commonclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\commonclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\practice\\-\\WindowsFormsApp1\\windowsformsapp1\\userclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\userclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\practice\\-\\WindowsFormsApp1\\windowsformsapp1\\regist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\regist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7A474938-D78C-4E04-86E1-0E90D1206ED6}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\practice\\-\\WindowsFormsApp1\\windowsformsapp1\\regist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -42,37 +46,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Regist.cs",
               "DocumentMoniker": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\Regist.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Regist.cs",
               "ToolTip": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\Regist.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Regist.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAAAEIAAAAtAAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAAQwIMAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-30T18:49:32.355Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "List.cs",
               "DocumentMoniker": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\List.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\List.cs",
               "ToolTip": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\List.cs",
               "RelativeToolTip": "WindowsFormsApp1\\List.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJ4AAAAvAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T20:02:49.25Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-30T20:02:49.25Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "OracleCommonClass.cs",
               "DocumentMoniker": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\OracleCommonClass.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\OracleCommonClass.cs",
@@ -84,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "UserClass.cs",
               "DocumentMoniker": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\UserClass.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\UserClass.cs",
@@ -96,31 +100,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "List.cs [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\List.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\List.cs",
-              "ToolTip": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\List.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "RelativeToolTip": "WindowsFormsApp1\\List.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "ToolTip": "C:\\Users\\uchid\\source\\repos\\WindowsFormsApp1\\WindowsFormsApp1\\List.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "RelativeToolTip": "..\\..\\..\\Users\\uchid\\source\\repos\\WindowsFormsApp1\\WindowsFormsApp1\\List.cs [\u30C7\u30B6\u30A4\u30F3]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-30T20:44:24.178Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
+              "WhenOpened": "2024-06-30T20:44:24.178Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "CommonClass.cs",
               "DocumentMoniker": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\CommonClass.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\CommonClass.cs",
               "ToolTip": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\CommonClass.cs",
               "RelativeToolTip": "WindowsFormsApp1\\CommonClass.cs",
-              "ViewState": "AQIAAPAAAAAAAAAAAAAowAQBAAAJAAAA",
+              "ViewState": "AQIAANsAAAAAAAAAAAAEwAIBAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-24T03:29:21.136Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
+              "Title": ".Designer.cs",
+              "DocumentMoniker": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\.Designer.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\.Designer.cs",
+              "ToolTip": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\.Designer.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\.Designer.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAArwEIAAACSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T09:03:03.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Regist.cs [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\Regist.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Regist.cs",
@@ -131,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\practice\\-\\WindowsFormsApp1\\WindowsFormsApp1\\Program.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
