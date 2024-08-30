@@ -40,6 +40,12 @@ namespace WindowsFormsApp1
                 Emp_status_comboBox.SelectedItem = UC.Type;
 
             }
+
+            if(sm == SaveMode.New)
+            {
+                ID_textBox.ReadOnly = true;
+                ID_textBox.Text = UC.ID.ToString();
+            }
         }
 
         private void Confirm_button_Click(object sender, EventArgs e)
@@ -61,6 +67,7 @@ namespace WindowsFormsApp1
             string Gender_Value = CommonClass.ChangeGender(Gender_textValue);
             string Birth_Value = Year_textBox.Text + Month_comboBox.Text + Day_comboBox.Text;
             string Deployment_Value = CommonClass.ChangeDeployment(Deployment_textValue);
+
 
             CommonClass.hasError = false;
             CommonClass.ErrorMessage(ID_textValue, CommonClass.IDItem);

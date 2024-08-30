@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Linq;
 using System.Deployment.Application;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
@@ -47,7 +48,7 @@ namespace WindowsFormsApp1
             //並び替える列を決める
             DataGridViewColumn sortColumn = EmployeeList.CurrentCell.OwningColumn;
 
-            //並び替えの方向（昇順か降順か）を決める
+            //並び替え
             ListSortDirection sortDirection = ListSortDirection.Ascending;
             if (EmployeeList.SortedColumn != null &&
                 EmployeeList.SortedColumn.Equals(sortColumn))
@@ -146,7 +147,13 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void Regist_Click(object sender, EventArgs e)
         {
-            Title frm = new Title(null);
+            UserClass UC = new UserClass();
+            UC.ID = (EmployeeList.Rows.Cast<DataGridViewRow>()
+                             .Where(row => row.Cells["EMP_ID"].Value != null)
+                             .Max(row => Convert.ToInt32(row.Cells["EMP_ID"].Value)) + 1)
+                             .ToString();
+
+            Title frm = new Title(UC);
             frm.sm = SaveMode.New;
             frm.ShowDialog();
             OracleCommonClass.DisplayTableData(OracleCommonClass.DB_ConnectPass, "EMPLOYEES", EmployeeList);
